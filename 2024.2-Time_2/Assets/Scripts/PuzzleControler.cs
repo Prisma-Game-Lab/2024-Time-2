@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static PuzzleControler;
+using UnityEngine.Events;
 
 public class PuzzleControler : MonoBehaviour
 {
     [SerializeField] private SnapPointController[] answerLocation;
     [SerializeField] private GameObject[] puzzleSolution;
+
+    [SerializeField] private UnityEvent onCorrectSolution;
 
     private void Awake()
     {
@@ -32,11 +34,10 @@ public class PuzzleControler : MonoBehaviour
         {
             if(answerLocation[i].snappedGameObject != puzzleSolution[i]) 
             {
-                print(i);
-                print("Wrong Solution");
                 return;
             }
         }
-        print("Right Solution!!!");
+        GameManager.Instance.DragableObjectOrder = 0;
+        onCorrectSolution.Invoke();
     }
 }
