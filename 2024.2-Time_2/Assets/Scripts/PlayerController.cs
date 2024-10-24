@@ -4,23 +4,76 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private Vector2 new_pos;
-    // Start is called before the first frame update
-    void Start()
+    private float goalPos;
+    private float distanceToGoal;
+    private GameObject interactionGoal;
+
+    private float currentMoveSpeed;
+    [SerializeField] private float maxMoveSpeed;
+    [SerializeField] private float smoothTime;
+
+    [SerializeField] private float interactionRange;
+
+    bool shouldMove;
+
+    public delegate void OnInteraction(GameObject droppedObject);
+    public static event OnInteraction onInteraction;
+
+    private void OnEnable()
     {
-        
+        PlayerInput.onMouseClick += ChangeGoal;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        PlayerInput.onMouseClick -= ChangeGoal;
+    }
 
-        if (Input.GetMouseButtonDown(0)){
-            new_pos = new Vector2(mousePosition.x,transform.position.y);
+    void FixedUpdate()
+    {
+        if (shouldMove) 
+        {
+            transform.position = new Vector2(Mathf.SmoothDamp(transform.position.x, goalPos, ref currentMoveSpeed, smoothTime, maxMoveSpeed),transform.position.y);
+            distanceToGoal = transform.position.x - goalPos;
+            if (Mathf.Abs(distanceToGoal) < 0.01f)
+            {
+                shouldMove = false;
+            }
+            else if (Mathf.Abs(distanceToGoal) < interactionRange) 
+            {
+                if (TriggerInteraction())
+                {
+                    shouldMove = false;
+                }
+            }
         }
-        
-        transform.position = Vector2.MoveTowards(transform.position,new_pos,Time.deltaTime *10f);
+    }
+
+    void ChangeGoal(GameObject gameObject) 
+    {
+        goalPos = GameManager.Instance.mousePos.x;
+        distanceToGoal = transform.position.x - goalPos;
+        if (Mathf.Abs(distanceToGoal) > 0.01f) 
+        {
+            shouldMove = true;
+        }
+        interactionGoal = gameObject;
+        if (Mathf.Abs(distanceToGoal) < interactionRange)
+        {
+            if (TriggerInteraction())
+            {
+                shouldMove = false;
+            }
+        }
+    }
+
+    bool TriggerInteraction() 
+    {
+        if (interactionGoal != null)
+        {
+            onInteraction?.Invoke(interactionGoal);
+            return true;
+        }
+        return false;
     }
 }

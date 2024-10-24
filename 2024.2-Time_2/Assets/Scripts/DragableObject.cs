@@ -18,13 +18,13 @@ public class DragableObject : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerInput.onObjectGrab += StartDrag;
+        PlayerInput.onMouseClick += StartDrag;
     }
 
     private void OnDisable()
     {
-        PlayerInput.onObjectGrab -= StartDrag;
-        PlayerInput.onObjectDrop -= EndDrag;
+        PlayerInput.onMouseClick -= StartDrag;
+        PlayerInput.onMouseCancelled -= EndDrag;
     }
 
     private void FixedUpdate()
@@ -43,7 +43,7 @@ public class DragableObject : MonoBehaviour
         }
         beingDragged = true;
         sr.sortingOrder = GameManager.Instance.DragableObjectOrder;
-        PlayerInput.onObjectDrop += EndDrag;
+        PlayerInput.onMouseCancelled += EndDrag;
         difference = (Vector2)(transform.position) - GameManager.Instance.mousePos;
     }
 
@@ -51,6 +51,6 @@ public class DragableObject : MonoBehaviour
     {
         beingDragged = false;
         GameManager.Instance.DragableObjectOrder += 1;
-        PlayerInput.onObjectDrop -= EndDrag;
+        PlayerInput.onMouseCancelled -= EndDrag;
     }
 }

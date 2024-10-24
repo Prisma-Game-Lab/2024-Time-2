@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class SnapPointController : MonoBehaviour
@@ -15,13 +14,13 @@ public class SnapPointController : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerInput.onObjectDrop += SnapTest;
+        PlayerInput.onMouseCancelled += SnapTest;
     }
 
     private void OnDisable()
     {
-        PlayerInput.onObjectDrop -= SnapTest;
-        PlayerInput.onObjectGrab -= RemoveSnappedObject;
+        PlayerInput.onMouseCancelled -= SnapTest;
+        PlayerInput.onMouseClick -= RemoveSnappedObject;
     }
 
     public void SnapTest(GameObject snapTestObject) 
@@ -31,32 +30,40 @@ public class SnapPointController : MonoBehaviour
             return;
         }
 
-        Collider2D[] hitResult = Physics2D.OverlapCircleAll(transform.position, snapRange, snapableObjects);
-        int HitSize = hitResult.Length;
+        //Collider2D[] hitResult = Physics2D.OverlapCircleAll(transform.position, snapRange, snapableObjects);
+        //int HitSize = hitResult.Length;
 
-        if(HitSize <= 0) 
+        //if(HitSize <= 0) 
+        //{
+        //    return;
+        //}
+
+        //float distance = (gameObject.transform.position -hitResult[0].transform.position).magnitude;
+        //float minDist = distance;
+        //int minDistIndex = 0;
+
+        //for (int i = 1; i < hitResult.Length; i++)
+        //{
+        //    distance = (gameObject.transform.position - hitResult[i].transform.position).magnitude;
+        //    if (distance < minDist)
+        //    {
+        //        minDist = distance;
+        //        minDistIndex = i;
+        //    }
+        //}
+
+        if((snapTestObject.transform.position - transform.position).magnitude < snapRange) 
         {
-            return;
+            snappedGameObject = snapTestObject;
+            snappedGameObject.transform.position = transform.position;
+            PlayerInput.onMouseClick += RemoveSnappedObject;
+            onObjectInSnapChange?.Invoke();
         }
 
-        float distance = (gameObject.transform.position -hitResult[0].transform.position).magnitude;
-        float minDist = distance;
-        int minDistIndex = 0;
-
-        for (int i = 1; i < hitResult.Length; i++)
-        {
-            distance = (gameObject.transform.position - hitResult[i].transform.position).magnitude;
-            if (distance < minDist)
-            {
-                minDist = distance;
-                minDistIndex = i;
-            }
-        }
-
-        snappedGameObject = hitResult[minDistIndex].gameObject;
-        snappedGameObject.transform.position = transform.position;
-        PlayerInput.onObjectGrab += RemoveSnappedObject;
-        onObjectInSnapChange();
+        //snappedGameObject = hitResult[minDistIndex].gameObject;
+        //snappedGameObject.transform.position = transform.position;
+        //PlayerInput.onMouseClick += RemoveSnappedObject;
+        //onObjectInSnapChange?.Invoke();
     } 
 
     private void RemoveSnappedObject(GameObject grabbedObject) 
@@ -64,7 +71,7 @@ public class SnapPointController : MonoBehaviour
         if (snappedGameObject == grabbedObject)
         {
             snappedGameObject = null;
-            PlayerInput.onObjectGrab -= RemoveSnappedObject;
+            PlayerInput.onMouseClick -= RemoveSnappedObject;
         }
     }
 

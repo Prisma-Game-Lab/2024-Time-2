@@ -38,6 +38,6 @@ public class PuzzleControler : MonoBehaviour
             }
         }
         GameManager.Instance.DragableObjectOrder = 0;
-        onCorrectSolution.Invoke();
+        onCorrectSolution?.Invoke();
     }
 }

@@ -10,11 +10,11 @@ public class PlayerInput : MonoBehaviour
 
     private Vector2 mousePosition;
 
-    public delegate void OnObjectGrab(GameObject grabbedObject);
-    public static event OnObjectGrab onObjectGrab;
+    public delegate void OnMouseClick(GameObject grabbedObject);
+    public static event OnMouseClick onMouseClick;
 
-    public delegate void OnObjectDrop(GameObject droppedObject);
-    public static event OnObjectDrop onObjectDrop;
+    public delegate void OnMouseCancelled(GameObject droppedObject);
+    public static event OnMouseCancelled onMouseCancelled;
 
     private void Awake()
     {
@@ -29,20 +29,30 @@ public class PlayerInput : MonoBehaviour
             if (col != null)
             {
                 draggingObject = col.gameObject;
-                onObjectGrab(draggingObject);
+                onMouseClick?.Invoke(draggingObject);
+            }
+            else 
+            {
+                onMouseClick(null);
             }
         }
         else if (context.canceled)
         {
-            onObjectDrop(draggingObject);
-            draggingObject = null;
+            if (draggingObject != null)
+            {
+                onMouseCancelled?.Invoke(draggingObject);
+            }
+            //draggingObject = null;
         }
     }
 
     public void ReadMousePosition(InputAction.CallbackContext context) 
     {
         Vector2 screenMousePosition = context.ReadValue<Vector2>();
-        mousePosition = mainCamera.ScreenToWorldPoint(screenMousePosition);
+        if(mainCamera != null) 
+        {
+            mousePosition = mainCamera.ScreenToWorldPoint(screenMousePosition);
+        }
         GameManager.Instance.mousePos = mousePosition;
     }
 }
