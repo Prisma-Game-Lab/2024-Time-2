@@ -6,7 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class GeniusButtons : MonoBehaviour
 {
-    [SerializeField] private int colorID;
+    [SerializeField] public int colorID;
 
     void OnMouseDown()
     {
