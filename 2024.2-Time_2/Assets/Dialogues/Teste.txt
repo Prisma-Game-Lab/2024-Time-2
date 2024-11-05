@@ -1,0 +1,11 @@
+Henrique:
+Oi!
+
+Meu nome é Henrique!
+<end>
+John Michael:
+E meu nome é John Michael!
+<end>
+John Michael:
+E viemos aqui apresentar nosso progresso da semana!
+<end>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using System.IO;
 
 public class DialogController : MonoBehaviour
 {
@@ -12,31 +13,32 @@ public class DialogController : MonoBehaviour
 
     [SerializeField] private float timeBetweenLetters;
 
+    private string txtPath = "";
     private UnityEvent[] onCharacterChange;
     private UnityEvent onDialogEnd;
 
     int currentIndex;
     int currentEventIndex;
-    int currentTextSize;
-    int currentNameSize;
-    string[] currentText;
-    string[] currentName;
+    int currentDialogSize;
+    string[] fileLines;
+    string currentName;
 
     private bool onDialog;
+    private bool writingLine;
 
-    public void StartDialog(string[] currentDialogText, string[] currentCharacterName, UnityEvent[] characterChangeEvents, UnityEvent onDialogEndEvent) 
+    public void StartDialog(string txtFileName, UnityEvent[] characterChangeEvents, UnityEvent onDialogEndEvent) 
     {
         if (onDialog)
         {
             return;
         }
-        currentText = currentDialogText;
-        currentTextSize = currentDialogText.Length;
-        currentNameSize = currentCharacterName.Length;
-        currentName = currentCharacterName;
+        txtPath = Application.dataPath + "/Dialogues/" + txtFileName + ".txt";
+        fileLines = File.ReadAllLines(txtPath);
+        currentDialogSize = fileLines.Length;
         onCharacterChange = characterChangeEvents;
         onDialogEnd = onDialogEndEvent;
         dialogBox.SetActive(true);
+        currentName = "";
         currentIndex = 0;
         currentEventIndex = 0;
         AdvanceDialog();
@@ -45,18 +47,21 @@ public class DialogController : MonoBehaviour
 
     public void AdvanceDialog() 
     {
-        if (currentIndex < currentTextSize) 
+        if (writingLine)
         {
+            OnDialogSkip();
+        }
+        if (currentIndex < currentDialogSize)
+        { 
             StopAllCoroutines();
-            if (currentIndex < currentNameSize)
+            string newName = fileLines[currentIndex].Remove(fileLines[currentIndex].Length - 1);
+            currentIndex++;
+            if(currentName != newName) 
             {
-                if (currentIndex == 0 || currentName[currentIndex] != currentName[currentIndex - 1]) 
-                {
-                    OnCharacterChange();
-                }
+                currentName = newName;
+                OnCharacterChange();
             }
             StartCoroutine(TypeSentence());
-            currentIndex++;
         }
         else
         {
@@ -66,19 +71,37 @@ public class DialogController : MonoBehaviour
 
     private void OnCharacterChange() 
     {
-        characterNameText.text = currentName[currentIndex];
+        characterNameText.text = currentName;
         onCharacterChange[currentEventIndex]?.Invoke();
         currentEventIndex = (currentEventIndex+1) % onCharacterChange.Length;
+    }
+
+    private void OnDialogSkip() 
+    {
+        while (currentIndex < currentDialogSize && fileLines[currentIndex] != "<end>")
+        {
+            currentIndex++;
+        }
+        currentIndex++;
+        writingLine = false;
     }
 
     private IEnumerator TypeSentence() 
     {
         dialogText.text = "";
-        foreach (char letter in currentText[currentIndex].ToCharArray()) 
+        writingLine = true;
+        while (currentIndex < currentDialogSize && fileLines[currentIndex] != "<end>")
         {
-            dialogText.text += letter;
-            yield return new WaitForSeconds(timeBetweenLetters);
+            foreach (char letter in fileLines[currentIndex].ToCharArray()) 
+            {
+                dialogText.text += letter;
+                yield return new WaitForSeconds(timeBetweenLetters);
+            }
+            dialogText.text += '\n';
+            currentIndex++;
         }
+        currentIndex++;
+        writingLine = false;
     } 
 
     private void EndDialog()

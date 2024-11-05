@@ -7,10 +7,7 @@ public class DialogActivator : MonoBehaviour
 {
     private DialogController dialogController;
 
-    [TextArea(5, 14)]
-    [SerializeField] private string[] characterText;
-    [SerializeField] private string[] characterName;
-
+    [SerializeField] private string txtFileName;
     [SerializeField] private UnityEvent[] onCharacterChange;
     [SerializeField] private UnityEvent onDialogEnd;
 
@@ -21,6 +18,6 @@ public class DialogActivator : MonoBehaviour
 
     public void ActivateDialog()
     {
-        dialogController.StartDialog(characterText, characterName, onCharacterChange, onDialogEnd);
+        dialogController.StartDialog(txtFileName, onCharacterChange, onDialogEnd);
     }
 }

@@ -1,0 +1,10 @@
+Henrique:
+Oi!
+Esse é o teste número 2º!
+<end>
+Henrique:
+Que é so pra ter certeza que está funcionando com acentos e tals!
+<end>
+Henrique:
+Bom era isso kkkkkkkkkkkkkk
+<end>
