@@ -32,7 +32,7 @@ public class DialogController : MonoBehaviour
         {
             return;
         }
-        txtPath = Application.dataPath + "/Dialogues/" + txtFileName + ".txt";
+        txtPath = Application.streamingAssetsPath + "/Dialogues/" + txtFileName + ".txt";
         fileLines = File.ReadAllLines(txtPath);
         currentDialogSize = fileLines.Length;
         onCharacterChange = characterChangeEvents;

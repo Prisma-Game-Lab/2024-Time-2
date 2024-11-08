@@ -14,21 +14,21 @@ public class SnapPointController : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerInput.onMouseCancelled += SnapTest;
+        DragableObject.onDragEnd += SnapTest;
     }
 
     private void OnDisable()
     {
-        PlayerInput.onMouseCancelled -= SnapTest;
-        PlayerInput.onMouseClick -= RemoveSnappedObject;
+        DragableObject.onDragEnd -= SnapTest;
+        DragableObject.onDragStart -= RemoveSnappedObject;
     }
 
     public void SnapTest(GameObject snapTestObject) 
     {
-        if(snappedGameObject != null)
-        {
-            return;
-        }
+        //if(snappedGameObject != null)
+        //{
+        //    return;
+        //}
 
         //Collider2D[] hitResult = Physics2D.OverlapCircleAll(transform.position, snapRange, snapableObjects);
         //int HitSize = hitResult.Length;
@@ -56,7 +56,8 @@ public class SnapPointController : MonoBehaviour
         {
             snappedGameObject = snapTestObject;
             snappedGameObject.transform.position = transform.position;
-            PlayerInput.onMouseClick += RemoveSnappedObject;
+            DragableObject.onDragStart -= SnapTest;
+            DragableObject.onDragEnd += RemoveSnappedObject;
             onObjectInSnapChange?.Invoke();
         }
 
@@ -71,7 +72,8 @@ public class SnapPointController : MonoBehaviour
         if (snappedGameObject == grabbedObject)
         {
             snappedGameObject = null;
-            PlayerInput.onMouseClick -= RemoveSnappedObject;
+            DragableObject.onDragStart += SnapTest;
+            DragableObject.onDragEnd -= RemoveSnappedObject;
         }
     }
 

@@ -9,11 +9,15 @@ using UnityEngine;
 [System.Serializable]
 public class GeniusPuzzle : MonoBehaviour
 {
+
     [SerializeField] private GameObject center;
     [SerializeField] private GameObject red;
     [SerializeField] private GameObject yellow;
     [SerializeField] private GameObject blue;
     [SerializeField] private GameObject green;
+
+    [SerializeField] private float turnSpeed;
+
     private List<int> solucao = new List<int> { };
     public static List<int> resposta = new List<int> { };
     private List<GameObject> buttons = new List<GameObject> { };
@@ -49,9 +53,9 @@ public class GeniusPuzzle : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        transform.RotateAround(center.transform.position, Vector3.forward, 0.5f);
+        transform.RotateAround(center.transform.position, Vector3.forward, turnSpeed);
         if (resposta.Count == 4)
         {
             if (Enumerable.SequenceEqual(solucao, resposta))

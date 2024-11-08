@@ -5,19 +5,20 @@ using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
+    private PlayerController pc;
+
     private Camera mainCamera;
-    private GameObject draggingObject;
+    private GameObject clickedObject;
 
     private Vector2 mousePosition;
 
-    public delegate void OnMouseClick(GameObject grabbedObject);
-    public static event OnMouseClick onMouseClick;
-
-    public delegate void OnMouseCancelled(GameObject droppedObject);
-    public static event OnMouseCancelled onMouseCancelled;
-
     private void Awake()
     {
+        pc = GetComponent<PlayerController>();
+        if(pc == null) 
+        {
+            Debug.LogError("No PlayerController connected to PlayerInput");
+        }
         mainCamera = Camera.main;
     }
 
@@ -28,21 +29,21 @@ public class PlayerInput : MonoBehaviour
             Collider2D col = Physics2D.OverlapPoint(mousePosition);
             if (col != null)
             {
-                draggingObject = col.gameObject;
-                onMouseClick?.Invoke(draggingObject);
+                clickedObject = col.gameObject;
+                pc.StartTriggerInteraction(clickedObject);
             }
             else 
             {
-                onMouseClick(null);
+                pc.StartTriggerInteraction(null);
             }
         }
         else if (context.canceled)
         {
-            if (draggingObject != null)
+            if (clickedObject != null)
             {
-                onMouseCancelled?.Invoke(draggingObject);
+                pc.CancelTriggerInteraction(clickedObject);
+                clickedObject = null;
             }
-            //draggingObject = null;
         }
     }
 

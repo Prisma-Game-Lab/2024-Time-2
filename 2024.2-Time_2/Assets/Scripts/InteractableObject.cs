@@ -9,17 +9,17 @@ public class InteractableObject : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerController.onInteraction += RealizeInteraction;
+        PlayerController.onInteractionStart += RealizeInteraction;
     }
 
     private void OnDisable()
     {
-        PlayerController.onInteraction -= RealizeInteraction;
+        PlayerController.onInteractionStart -= RealizeInteraction;
     }
 
     void RealizeInteraction(GameObject objectInteracted) 
     {
-        if(gameObject != gameObject) 
+        if(gameObject != objectInteracted) 
         {
             return;
         }

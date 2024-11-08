@@ -11,6 +11,12 @@ public class DragableObject : MonoBehaviour
 
     private bool beingDragged;
 
+    public delegate void OnDragStart(GameObject droppedObject);
+    public static event OnDragStart onDragStart;
+
+    public delegate void OnDragEnd(GameObject droppedObject);
+    public static event OnDragEnd onDragEnd;
+
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -18,13 +24,13 @@ public class DragableObject : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerInput.onMouseClick += StartDrag;
+        PlayerController.onInteractionStart += StartDrag;
     }
 
     private void OnDisable()
     {
-        PlayerInput.onMouseClick -= StartDrag;
-        PlayerInput.onMouseCancelled -= EndDrag;
+        PlayerController.onInteractionStart -= StartDrag;
+        PlayerController.onInteractionEnd -= EndDrag;
     }
 
     private void FixedUpdate()
@@ -43,14 +49,16 @@ public class DragableObject : MonoBehaviour
         }
         beingDragged = true;
         sr.sortingOrder = GameManager.Instance.DragableObjectOrder;
-        PlayerInput.onMouseCancelled += EndDrag;
-        difference = (Vector2)(transform.position) - GameManager.Instance.mousePos;
+        PlayerController.onInteractionEnd += EndDrag;
+        difference = (Vector2)transform.position - GameManager.Instance.mousePos;
+        onDragStart?.Invoke(gameObject);
     }
 
     private void EndDrag(GameObject droppedObject) 
     {
         beingDragged = false;
         GameManager.Instance.DragableObjectOrder += 1;
-        PlayerInput.onMouseCancelled -= EndDrag;
+        PlayerController.onInteractionEnd -= EndDrag;
+        onDragEnd?.Invoke(gameObject);
     }
 }
