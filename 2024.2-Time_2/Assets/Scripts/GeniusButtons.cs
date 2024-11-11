@@ -10,6 +10,9 @@ public class GeniusButtons : MonoBehaviour
 
     void OnMouseDown()
     {
-        GeniusPuzzle.resposta.Add(colorID);
+        if (GeniusPuzzle.comeco == 1)
+        {
+            GeniusPuzzle.resposta.Add(colorID);
+        }
     }
 }

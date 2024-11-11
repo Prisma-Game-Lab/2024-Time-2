@@ -21,6 +21,7 @@ public class GeniusPuzzle : MonoBehaviour
     private List<int> solucao = new List<int> { };
     public static List<int> resposta = new List<int> { };
     private List<GameObject> buttons = new List<GameObject> { };
+    public static int comeco = 0;
 
     void Start()
     {
@@ -43,13 +44,14 @@ public class GeniusPuzzle : MonoBehaviour
                 if (num == buttons[j].GetComponent<GeniusButtons>().colorID)
                 {
                     //mudar essa forma de trocar a cor pra piscar porque algumas nao tao trocando, rgb e daltonismo meu (?)
-                    UnityEngine.Color original = buttons[i].GetComponent<Renderer>().material.color;
-                    buttons[j].GetComponent<Renderer>().material.color = new UnityEngine.Color(100, 100, 100);
+                    UnityEngine.Color original = buttons[j].GetComponent<SpriteRenderer>().color;
+                    buttons[j].GetComponent<SpriteRenderer>().color = new UnityEngine.Color(255, 255, 255);
                     yield return new WaitForSeconds(3);
-                    buttons[j].GetComponent<Renderer>().material.color = original;
+                    buttons[j].GetComponent<SpriteRenderer>().color = original;
                     yield return new WaitForSeconds(1);
                 }
             }
+            comeco = 1;
         }
     }
 
