@@ -724,9 +724,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e09a011c3ac5634aac731a50fa3e9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMoveSpeed: 7
-  smoothTime: 0.2
-  interactionRange: 0.05
 --- !u!50 &1841244827
 Rigidbody2D:
   serializedVersion: 4
@@ -993,10 +990,10 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1900136606}
+  - {fileID: 1379303950}
   - {fileID: 1134290332}
   - {fileID: 1841244824}
   - {fileID: 1520444153}
   - {fileID: 1928910559}
   - {fileID: 789043707}
   - {fileID: 1347790217}
-  - {fileID: 1379303950}
