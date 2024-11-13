@@ -11,6 +11,8 @@ public class GeniusPuzzle : MonoBehaviour
 {
 
     [SerializeField] private GameObject center;
+    [SerializeField] private GameObject popup;
+    [SerializeField] private GameObject victory; //marcador de vitoria temporario
     [SerializeField] private GameObject red;
     [SerializeField] private GameObject yellow;
     [SerializeField] private GameObject blue;
@@ -22,6 +24,7 @@ public class GeniusPuzzle : MonoBehaviour
     public static List<int> resposta = new List<int> { };
     private List<GameObject> buttons = new List<GameObject> { };
     public static int comeco = 0;
+    public static bool noite = true; //comecei como true por motivos de teste, mudar depois
 
     void Start()
     {
@@ -57,19 +60,36 @@ public class GeniusPuzzle : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.RotateAround(center.transform.position, Vector3.forward, turnSpeed);
+        if(noite == true)
+        {
+            transform.RotateAround(center.transform.position, Vector3.forward, turnSpeed);
+        }
         if (resposta.Count == 4)
         {
             if (Enumerable.SequenceEqual(solucao, resposta))
             {
+                StartCoroutine(Win());
                 Debug.Log("ganhou");
                 //ganhou
             }
             else
             {
+                solucao.Clear();
+                resposta.Clear();
+                buttons.Clear();
+                comeco = 0;
+                Start();
                 Debug.Log("perdeu");
                 //perdeu
             }
         }
+    }
+
+    IEnumerator Win()
+    {
+        victory.SetActive(true);
+        yield return new WaitForSeconds(5);
+        victory.SetActive(false);
+        popup.SetActive(false);
     }
 }
