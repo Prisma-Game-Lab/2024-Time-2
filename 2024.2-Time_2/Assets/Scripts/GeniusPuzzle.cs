@@ -24,7 +24,7 @@ public class GeniusPuzzle : MonoBehaviour
     public static List<int> resposta = new List<int> { };
     private List<GameObject> buttons = new List<GameObject> { };
     public static int comeco = 0;
-    public static bool noite = true; //comecei como true por motivos de teste, mudar depois
+    public static bool noite = false; //comecei como true por motivos de teste, mudar depois
 
     void Start()
     {
@@ -49,7 +49,7 @@ public class GeniusPuzzle : MonoBehaviour
                     //mudar essa forma de trocar a cor pra piscar porque algumas nao tao trocando, rgb e daltonismo meu (?)
                     UnityEngine.Color original = buttons[j].GetComponent<SpriteRenderer>().color;
                     buttons[j].GetComponent<SpriteRenderer>().color = new UnityEngine.Color(255, 255, 255);
-                    yield return new WaitForSeconds(3);
+                    yield return new WaitForSeconds(1);
                     buttons[j].GetComponent<SpriteRenderer>().color = original;
                     yield return new WaitForSeconds(1);
                 }
@@ -62,7 +62,7 @@ public class GeniusPuzzle : MonoBehaviour
     {
         if(noite == true)
         {
-            transform.RotateAround(center.transform.position, Vector3.forward, turnSpeed);
+            transform.RotateAround(center.transform.position, Vector3.forward, turnSpeed + 0.75f * resposta.Count);
         }
         if (resposta.Count == 4)
         {
