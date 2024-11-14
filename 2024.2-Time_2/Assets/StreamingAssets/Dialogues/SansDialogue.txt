@@ -1,16 +1,18 @@
-Mark:
-Sans undertale?!?!
-É você?
-<end>
-Sans undertale:
-Sim, sou eu mesmo!!!
-Como vai mark ingenium de Invencivel?
-<end>
-Sans undertale:
-Voce viu que o ar condicionado quebrou???
-Eu sou só osso e mesmo assim to morrendo de calor!!!
+Pai: 
+Bom dia flor do dia!
 <end>
 Mark:
-Vou concertar, rlx!!!
-Confia no pai!!!
+Bom dia pai!
+<end>
+Pai:
+Tá pronto para a lição? Hoje eu vou te ensinar um mecanismo que é importante para mexer com as travas de segurança da nave, sem isso não poderíamos mexer em algumas partes do reator por exemplo.
+<end>
+Mark:
+Maneiro, mas como funciona?
+<end>
+Pai:
+Esse mecanismo funciona da seguinte maneira, as luzes coloridas vão indicar uma sequência e você deve inserir a mesma sequência nesses botões
+<end>
+Pai:
+Vai tenta aí
 <end>

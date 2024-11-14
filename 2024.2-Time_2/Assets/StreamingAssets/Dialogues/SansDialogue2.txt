@@ -1,0 +1,12 @@
+Pai:
+Até que você é bom nisso
+<end>
+Mark:
+Aprendi com o melhor
+<end>
+Pai:
+Esse é o meu menino! 
+<end>
+Pai:
+Acho que por hoje já basta, se quiser você pode ir brincar com os seus amigos agora
+<end>

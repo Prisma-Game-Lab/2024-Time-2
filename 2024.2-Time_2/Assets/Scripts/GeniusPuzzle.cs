@@ -1,60 +1,74 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
-[System.Serializable]
 public class GeniusPuzzle : MonoBehaviour
 {
+    [Header("Configuration")]
+    [SerializeField] private bool noite = false; //comecei como true por motivos de teste, mudar depois
 
-    [SerializeField] private GameObject center;
-    [SerializeField] private GameObject popup;
-    [SerializeField] private GameObject victory; //marcador de vitoria temporario
-    [SerializeField] private GameObject red;
-    [SerializeField] private GameObject yellow;
-    [SerializeField] private GameObject blue;
-    [SerializeField] private GameObject green;
-
+    [Header("Stats")]
     [SerializeField] private float turnSpeed;
+    [SerializeField] private float turnAcceleration;
+    [SerializeField] private int buttonsAmount;
+    [SerializeField] private Image[] buttonsImages;
+    [SerializeField] private UnityEvent onPuzzleCompleted;
 
-    private List<int> solucao = new List<int> { };
-    public static List<int> resposta = new List<int> { };
-    private List<GameObject> buttons = new List<GameObject> { };
-    public static int comeco = 0;
-    public static bool noite = false; //comecei como true por motivos de teste, mudar depois
+    private List<int> solucao = new List<int>();
+    private int nCorrectResponses = 0;
+    private bool canAnswer = false;
+    private Color original;
+    private int randomNum;
 
-    void Start()
+    void OnEnable()
     {
-        buttons.Add(red);
-        buttons.Add(yellow);
-        buttons.Add(blue);
-        buttons.Add(green);
         StartCoroutine(Glow());
+    }
+
+    void OnDisable() 
+    {
+        buttonsImages[randomNum].color = original;
     }
 
     IEnumerator Glow()
     {
-        for (int i = 0; i < 4; i++)
+        nCorrectResponses = 0;
+        solucao.Clear();
+        canAnswer = false;
+        for (int i = 0; i < buttonsAmount; i++)
         {
-            int num = UnityEngine.Random.Range(1, 4);
-            solucao.Add(num);
-            Debug.Log(solucao[i]);
-            for (int j = 0; j < 4; j++)
+            randomNum = Random.Range(0, buttonsImages.Length);
+            solucao.Add(randomNum);
+            original = buttonsImages[randomNum].color;
+            buttonsImages[randomNum].color = new Color(255, 255, 255);
+            yield return new WaitForSeconds(1);
+            buttonsImages[randomNum].color = original;
+            yield return new WaitForSeconds(1);
+        }
+        canAnswer = true;
+    }
+    
+    public void OnColorPress(int colorID) 
+    {
+        if (!canAnswer)
+        {
+            return;
+        }
+        if(colorID == solucao[nCorrectResponses]) 
+        {
+            nCorrectResponses++;
+            if (nCorrectResponses == buttonsAmount)
             {
-                if (num == buttons[j].GetComponent<GeniusButtons>().colorID)
-                {
-                    //mudar essa forma de trocar a cor pra piscar porque algumas nao tao trocando, rgb e daltonismo meu (?)
-                    UnityEngine.Color original = buttons[j].GetComponent<SpriteRenderer>().color;
-                    buttons[j].GetComponent<SpriteRenderer>().color = new UnityEngine.Color(255, 255, 255);
-                    yield return new WaitForSeconds(1);
-                    buttons[j].GetComponent<SpriteRenderer>().color = original;
-                    yield return new WaitForSeconds(1);
-                }
+                onPuzzleCompleted?.Invoke();
+                //ganhou
             }
-            comeco = 1;
+        }
+        else 
+        {
+            StartCoroutine(Glow());
+            //perdeu
         }
     }
 
@@ -62,34 +76,7 @@ public class GeniusPuzzle : MonoBehaviour
     {
         if(noite == true)
         {
-            transform.RotateAround(center.transform.position, Vector3.forward, turnSpeed + 0.75f * resposta.Count);
+            transform.RotateAround(transform.position, Vector3.forward, turnSpeed + turnAcceleration * nCorrectResponses);
         }
-        if (resposta.Count == 4)
-        {
-            if (Enumerable.SequenceEqual(solucao, resposta))
-            {
-                StartCoroutine(Win());
-                Debug.Log("ganhou");
-                //ganhou
-            }
-            else
-            {
-                solucao.Clear();
-                resposta.Clear();
-                buttons.Clear();
-                comeco = 0;
-                Start();
-                Debug.Log("perdeu");
-                //perdeu
-            }
-        }
-    }
-
-    IEnumerator Win()
-    {
-        victory.SetActive(true);
-        yield return new WaitForSeconds(5);
-        victory.SetActive(false);
-        popup.SetActive(false);
     }
 }
