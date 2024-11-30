@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PuzzleControler : MonoBehaviour
+public class CableControler : MonoBehaviour
 {
     [SerializeField] private SnapPointController[] answerLocation;
     [SerializeField] private GameObject[] puzzleSolution;

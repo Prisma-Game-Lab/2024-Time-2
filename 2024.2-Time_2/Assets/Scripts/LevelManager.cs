@@ -7,11 +7,14 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance { get; private set; }
 
-    bool changingScenes;
+    bool changingScenes = true;
 
     public delegate void OnSceneTransition();
     public static event OnSceneTransition onSceneTransition;
-    
+
+    public delegate void OnSceneTransitionEnd();
+    public static event OnSceneTransitionEnd onSceneTransitionEnd;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -22,6 +25,14 @@ public class LevelManager : MonoBehaviour
         {
             Instance = this;
         }
+        StartCoroutine(inicialTransition());
+    }
+
+    public IEnumerator inicialTransition()
+    {
+        yield return new WaitForSeconds(1);
+        changingScenes = false;
+        onSceneTransitionEnd?.Invoke();
     }
 
     public void changeScene(string sceneName)
@@ -40,5 +51,6 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
         yield return new WaitForSeconds(1);
         changingScenes = false;
+        onSceneTransitionEnd?.Invoke();
     }
 }

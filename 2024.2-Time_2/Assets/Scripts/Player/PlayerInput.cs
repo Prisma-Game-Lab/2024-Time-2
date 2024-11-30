@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
+    public delegate void OnMouseMove(float mousePositionX);
+    public static event OnMouseMove onMouseMove;
+
     private PlayerController pc;
 
     private Camera mainCamera;
@@ -55,5 +58,6 @@ public class PlayerInput : MonoBehaviour
             mousePosition = mainCamera.ScreenToWorldPoint(screenMousePosition);
         }
         GameManager.Instance.mousePos = mousePosition;
+        onMouseMove(screenMousePosition.x);
     }
 }

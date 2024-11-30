@@ -12,25 +12,26 @@ public class PlayerController : MonoBehaviour
     public delegate void OnInteractionEnd(GameObject droppedObject);
     public static event OnInteractionEnd onInteractionEnd;
 
-    //void FixedUpdate()
-    //{
-    //    //if (shouldMove) 
-    //    //{
-    //    //    transform.position = new Vector2(Mathf.SmoothDamp(transform.position.x, goalPos, ref currentMoveSpeed, smoothTime, maxMoveSpeed),transform.position.y);
-    //    //    distanceToGoal = transform.position.x - goalPos;
-    //    //    if (Mathf.Abs(distanceToGoal) < 0.01f)
-    //    //    {
-    //    //        shouldMove = false;
-    //    //    }
-    //    //    else if (Mathf.Abs(distanceToGoal) < interactionRange) 
-    //    //    {
-    //    //        if (TriggerInteraction())
-    //    //        {
-    //    //            shouldMove = false;
-    //    //        }
-    //    //    }
-    //    //}
-    //}
+    void FixedUpdate()
+    {
+        transform.position = Camera.main.ScreenToWorldPoint(GameManager.Instance.screenMousePosition);
+        //if (shouldMove) 
+        //{
+        //    transform.position = new Vector2(Mathf.SmoothDamp(transform.position.x, goalPos, ref currentMoveSpeed, smoothTime, maxMoveSpeed),transform.position.y);
+        //    distanceToGoal = transform.position.x - goalPos;
+        //    if (Mathf.Abs(distanceToGoal) < 0.01f)
+        //    {
+        //        shouldMove = false;
+        //    }
+        //    else if (Mathf.Abs(distanceToGoal) < interactionRange) 
+        //    {
+        //        if (TriggerInteraction())
+        //        {
+        //            shouldMove = false;
+        //        }
+        //    }
+        //}
+    }
 
     //void ChangeGoal(GameObject gameObject) 
     //{

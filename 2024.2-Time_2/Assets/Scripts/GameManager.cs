@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance {  get; private set; }
 
     public Vector2 mousePos;
+    public Vector2 screenMousePosition;
     public int DragableObjectOrder = 0;
 
     private void Awake()

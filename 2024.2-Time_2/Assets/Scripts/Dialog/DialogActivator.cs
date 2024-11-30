@@ -10,6 +10,8 @@ public class DialogActivator : MonoBehaviour
     [SerializeField] private string txtFileName;
     [SerializeField] private UnityEvent[] onCharacterChange;
     [SerializeField] private UnityEvent onDialogEnd;
+    [SerializeField] private Sprite[] characterSprites;
+    [SerializeField] private bool firstSpeaker;
 
     private void Awake()
     {
@@ -18,6 +20,6 @@ public class DialogActivator : MonoBehaviour
 
     public void ActivateDialog()
     {
-        dialogController.StartDialog(txtFileName, onCharacterChange, onDialogEnd);
+        dialogController.StartDialog(txtFileName, onCharacterChange, onDialogEnd, characterSprites, firstSpeaker);
     }
 }
