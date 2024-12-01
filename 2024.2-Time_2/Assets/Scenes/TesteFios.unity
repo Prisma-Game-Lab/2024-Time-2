@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: right
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5458706583464201074, guid: 160b2b975938d8442a077fae41e07e72, type: 3}
+      propertyPath: linked
+      value: 
+      objectReference: {fileID: 1047225236}
     - target: {fileID: 5649794566328270127, guid: 160b2b975938d8442a077fae41e07e72, type: 3}
       propertyPath: m_Name
       value: WireInverted (1)
@@ -492,6 +496,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &690854720 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5792600588150225005, guid: 160b2b975938d8442a077fae41e07e72, type: 3}
+  m_PrefabInstance: {fileID: 235282798}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &824172542 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 612179321991950361, guid: 102fe0841a9581a4eb9bb26d7834a6ca, type: 3}
@@ -708,6 +717,10 @@ PrefabInstance:
       propertyPath: right
       value: 
       objectReference: {fileID: 453724938}
+    - target: {fileID: 5458706583464201074, guid: 160b2b975938d8442a077fae41e07e72, type: 3}
+      propertyPath: linked
+      value: 
+      objectReference: {fileID: 690854720}
     - target: {fileID: 5649794566328270127, guid: 160b2b975938d8442a077fae41e07e72, type: 3}
       propertyPath: m_Name
       value: WireInverted
