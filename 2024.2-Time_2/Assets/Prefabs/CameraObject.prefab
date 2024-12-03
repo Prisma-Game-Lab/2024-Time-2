@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c7d91f5053924c44926be2e7b490b89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraMaxSpeed: 10
-  cameraAcceleration: 20
-  cameraDesacceleration: 30
+  cameraArrows: {fileID: 0}
+  cameraPossiblePositions: []
+  starterPositionIndex: 0
+  smoothTime: 0.5
