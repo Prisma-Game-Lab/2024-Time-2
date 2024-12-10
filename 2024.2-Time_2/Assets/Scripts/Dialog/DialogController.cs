@@ -5,19 +5,19 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.IO;
 using UnityEngine.UI;
+using System.Text;
 
 public class DialogController : MonoBehaviour
 {
     [SerializeField] private GameObject dialogBox;
     [SerializeField] private TMP_Text dialogText;
     [SerializeField] private TMP_Text speakerNameText;
-    [SerializeField] private Image[] charactersImage;
     [SerializeField] private Color blacknedColor;
+    private Dictionary<string, Image> characterImages = new Dictionary<string, Image>();
 
     [SerializeField] private float timeBetweenLetters;
 
-    private string txtPath = "";
-    private UnityEvent[] onCharacterChangeEvent;
+    //private UnityEvent[] onCharacterChangeEvent;
     private UnityEvent onDialogEnd;
 
     public delegate void OnDialogStart();
@@ -27,45 +27,42 @@ public class DialogController : MonoBehaviour
     public static event OnDialogFinish onDialogFinish;
 
     int currentIndex;
-    int currentEventIndex;
+    //int currentEventIndex;
     int currentDialogSize;
-    int characterIndex;
     string[] fileLines;
     string currentName;
 
     private bool onDialog;
     private bool writingLine;
 
-    public void StartDialog(string txtFileName, UnityEvent[] characterChangeEvents, UnityEvent onDialogEndEvent, Sprite[] chrImages, bool firstSentence)
+    public void StartDialog(string txtFileName, ref UnityEvent onDialogEndEvent, ref Image[] chrImages, ref string[] chrNames)
     {
-        onDialogStart?.Invoke();
+        string txtPath;
+
         if (onDialog)
         {
             return;
         }
+
+        onDialogStart?.Invoke();
+
         txtPath = Application.streamingAssetsPath + "/Dialogues/" + txtFileName + ".txt";
-        fileLines = File.ReadAllLines(txtPath);
+        fileLines = File.ReadAllLines(txtPath,Encoding.UTF8);
+
         currentDialogSize = fileLines.Length;
-        onCharacterChangeEvent = characterChangeEvents;
+        //onCharacterChangeEvent = characterChangeEvents;
         onDialogEnd = onDialogEndEvent;
         dialogBox.SetActive(true);
         currentName = "";
         currentIndex = 0;
-        currentEventIndex = 0;
+        //currentEventIndex = 0;
 
-        if (firstSentence)
-        {
-            characterIndex = 1;
-        }
-        else
-        {
-            characterIndex = 0;
-        }
-
+        characterImages.Clear();
         for (int i = 0; i < chrImages.Length; i++)
         {
-            charactersImage[i].sprite = chrImages[i];
-            charactersImage[i].preserveAspect = true;
+            chrImages[i].gameObject.SetActive(true);
+            chrImages[i].color = blacknedColor;
+            characterImages.Add(chrNames[i], chrImages[i]);
         }
 
         AdvanceDialog();
@@ -85,8 +82,7 @@ public class DialogController : MonoBehaviour
             currentIndex++;
             if (currentName != newName)
             {
-                currentName = newName;
-                OnCharacterChange();
+                OnCharacterChange(newName);
             }
             StartCoroutine(TypeSentence());
         }
@@ -96,16 +92,18 @@ public class DialogController : MonoBehaviour
         }
     }
 
-    private void OnCharacterChange()
+    private void OnCharacterChange(string newName)
     {
-        speakerNameText.text = currentName;
-        onCharacterChangeEvent[currentEventIndex]?.Invoke();
-        charactersImage[characterIndex].color = new Color(255,255,255);
+        speakerNameText.text = newName;
+        characterImages[newName].color = new Color(255,255,255);
+        if (characterImages.ContainsKey(currentName))
+        {
+            characterImages[currentName].color = blacknedColor;
+        }
+        currentName = newName;
 
-        characterIndex = (characterIndex + 1) % 2;
-        currentEventIndex = (currentEventIndex + 1) % onCharacterChangeEvent.Length;
-
-        charactersImage[characterIndex].color = blacknedColor;
+        //onCharacterChangeEvent[currentEventIndex]?.Invoke();
+        //currentEventIndex = (currentEventIndex + 1) % onCharacterChangeEvent.Length;
     }
 
     private void OnDialogSkip()
@@ -139,6 +137,10 @@ public class DialogController : MonoBehaviour
     private void EndDialog()
     {
         dialogBox.SetActive(false);
+        foreach (Image image in characterImages.Values)
+        {
+            image.gameObject.SetActive(false);
+        }
         onDialog = false;
         onDialogEnd?.Invoke();
         onDialogFinish?.Invoke();

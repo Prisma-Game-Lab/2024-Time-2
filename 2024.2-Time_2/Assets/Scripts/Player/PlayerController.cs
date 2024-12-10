@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position = Camera.main.ScreenToWorldPoint(GameManager.Instance.screenMousePosition);
         //if (shouldMove) 
         //{
         //    transform.position = new Vector2(Mathf.SmoothDamp(transform.position.x, goalPos, ref currentMoveSpeed, smoothTime, maxMoveSpeed),transform.position.y);

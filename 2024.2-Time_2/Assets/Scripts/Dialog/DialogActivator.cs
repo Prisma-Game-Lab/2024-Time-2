@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class DialogActivator : MonoBehaviour
 {
     private DialogController dialogController;
 
     [SerializeField] private string txtFileName;
-    [SerializeField] private UnityEvent[] onCharacterChange;
+    //[SerializeField] private UnityEvent[] onCharacterChange;
     [SerializeField] private UnityEvent onDialogEnd;
-    [SerializeField] private Sprite[] characterSprites;
-    [SerializeField] private bool firstSpeaker;
+    [SerializeField] private Image[] charactersImage;
+    [SerializeField] private string[] charactersNames;
 
     private void Awake()
     {
@@ -20,6 +21,6 @@ public class DialogActivator : MonoBehaviour
 
     public void ActivateDialog()
     {
-        dialogController.StartDialog(txtFileName, onCharacterChange, onDialogEnd, characterSprites, firstSpeaker);
+        dialogController.StartDialog(txtFileName, ref onDialogEnd, ref charactersImage, ref charactersNames);
     }
 }

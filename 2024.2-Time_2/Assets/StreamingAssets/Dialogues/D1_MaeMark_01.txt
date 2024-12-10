@@ -1,0 +1,22 @@
+Mãe:
+Bom dia, Mark! Dormiu bem?
+<end>
+Mark:
+Bom dia!
+<end>
+Mark:
+Mais ou menos...
+Tenho acordado algumas vezes durante a noite.
+<end>
+Mãe:
+É, dormir aqui no espaço é mesmo um pouco complicado. Mas não se preocupe, daqui a pouco chegaremos no planeta que seu pai encontrou, e lá será mais fácil descansar.
+<end>
+Mark:
+Oba!
+<end>
+Mark:
+Falando nisso, você sabe onde o papai está?
+<end>
+Mãe:
+Ele está no pátio, te esperando para a sua lição diária. Ele até pensou em te acordar, mas achou melhor deixar você dormir um pouco mais.
+<end>

@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private CameraArrows cameraArrows;
+    [SerializeField] private Transform childCamera;
     [SerializeField] private Transform[] cameraPossiblePositions;
     [SerializeField] private int starterPositionIndex;
     [SerializeField] private float smoothTime; 
+    private CameraArrows cameraArrows;
     private int nPossiblePositions;
     private Vector2 desiredPosition;
     private Vector2 velocity = Vector2.zero;
@@ -18,6 +19,19 @@ public class CameraController : MonoBehaviour
     private int speedDirection;
     private bool shouldMove;
     private bool canMove;
+
+    private void Awake()
+    {
+        cameraArrows = GameObject.Find("CameraArrows").GetComponent<CameraArrows>();
+        cameraArrows.SetUp(this);
+
+        nPossiblePositions = cameraPossiblePositions.Length;
+        curentPositionIndex = 0;
+
+        curentPositionIndex = starterPositionIndex;
+        childCamera.position = cameraPossiblePositions[starterPositionIndex].position;
+        DisplayArrows();
+    }
 
     private void OnEnable()
     {
@@ -43,22 +57,12 @@ public class CameraController : MonoBehaviour
         PuzzleController.onPuzzleEnd -= EnableCameraMovement;
     }
 
-    private void Awake()
-    {
-        nPossiblePositions = cameraPossiblePositions.Length;
-        curentPositionIndex = 0;
-
-        curentPositionIndex = starterPositionIndex;
-        transform.position = cameraPossiblePositions[starterPositionIndex].position;
-        DisplayArrows();
-    }
-
     private void FixedUpdate()
     {
         if (shouldMove)
         {
-            transform.position = Vector2.SmoothDamp(transform.position, desiredPosition, ref velocity, smoothTime);
-            if (Vector2.Distance(transform.position, desiredPosition) < 0.1f) 
+            childCamera.position = Vector2.SmoothDamp(childCamera.position, desiredPosition, ref velocity, smoothTime);
+            if (Vector2.Distance(childCamera.position, desiredPosition) < 0.1f) 
             {
                 shouldMove = false;
                 if (canMove) 

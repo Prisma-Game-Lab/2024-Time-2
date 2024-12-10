@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Cenas Oficiais/QuartoMark.unity
+    path: Assets/Scenes/Cenas Oficiais/Dia 1/QuartoMark.unity
     guid: 26a34e513e6161d458f6cd2739def597
   - enabled: 1
-    path: Assets/Scenes/Cenas Oficiais/CorredorPrincipal.unity
+    path: Assets/Scenes/Cenas Oficiais/Dia 1/Corredor1.unity
+    guid: 97b22e8743c015d4cb2ceabd4c83027c
+  - enabled: 1
+    path: Assets/Scenes/Cenas Oficiais/Dia 1/Patio.unity
     guid: d86965850a40d5b4aba69862f21b7bd8
   m_configObjects: {}

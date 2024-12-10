@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mousePos: {x: 0, y: 0}
+  screenMousePosition: {x: 0, y: 0}
   DragableObjectOrder: 0
 --- !u!114 &1760034694462262702
 MonoBehaviour:

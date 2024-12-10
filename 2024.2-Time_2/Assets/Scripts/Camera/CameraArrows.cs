@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class CameraArrows : MonoBehaviour
 {
-    [SerializeField] private CameraController cameraController;
     [SerializeField] private GameObject leftArrow, rightArrow;
+    private CameraController cameraController;
+
+    public void SetUp(CameraController cc) 
+    {
+        cameraController = cc;
+    }
 
     public void TurnOnLeftArrow() 
     {

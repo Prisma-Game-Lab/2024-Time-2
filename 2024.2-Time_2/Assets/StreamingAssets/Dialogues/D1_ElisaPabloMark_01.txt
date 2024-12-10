@@ -1,0 +1,39 @@
+Mark:
+Bom dia!
+<end>
+Elisa:
+Bom dia!
+<end>
+Pablo:
+Bom dia!
+<end>
+Mark:
+Alguma novidade sobre quando vamos chegar no planeta?
+<end>
+Elisa:
+Por enquanto, não. Meus pais só disseram que estamos chegando.
+<end>
+Pablo:
+Os meus comentaram que as árvores desse planeta são azuis e que a grama tem uma cor meio alaranjada.
+<end>
+Mark:
+Os meus disseram algo parecido.
+<end>
+Elisa:
+Uau! Os meus não me falaram nada sobre isso.
+<end>
+Mark:
+Provavelmente eles iam te contar depois.
+<end>
+Pablo:
+É, provavelmente.
+<end>
+Elisa:
+Mark, quer brincar de alguma coisa? Eu e o Pablo estávamos jogando "Quem Sou Eu", mas agora que somos três, podemos brincar de pique-pega.
+<end>
+Mark:
+Eu não posso agora, ainda preciso fazer a lição com meu pai. Mas depois que eu terminar, a gente brinca, combinado?
+<end>
+Elisa:
+Combinado!
+<end>

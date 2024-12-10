@@ -1,4 +1,4 @@
-Pai: 
+Pai:
 Bom dia flor do dia!
 <end>
 Mark:
