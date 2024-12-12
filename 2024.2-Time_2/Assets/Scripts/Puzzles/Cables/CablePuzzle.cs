@@ -7,9 +7,12 @@ public class CablePuzzle : MonoBehaviour
 {
     [SerializeField] private bool noite = true;
     [SerializeField] private bool charged = false;
-    [SerializeField] private GameObject outline;
-    [SerializeField] private GameObject left;
+    [SerializeField] private bool font = false;
+    [SerializeField] private Sprite on;
+    [SerializeField] private Sprite off;
+    [SerializeField] private GameObject before;
     [SerializeField] private GameObject linked;
+
 
     private void OnMouseDown()
     {
@@ -22,28 +25,44 @@ public class CablePuzzle : MonoBehaviour
 
     private void Spin(GameObject gameObject)
     {
-        if (gameObject.transform.localPosition.x == 0)
+        if (gameObject.GetComponent<SpriteRenderer>().flipX)
         {
-            gameObject.transform.localPosition = new Vector3(1, 0, 0);
-            gameObject.transform.localRotation = Quaternion.Euler(0, 0, 180);
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
         else
         {
-            gameObject.transform.localPosition = new Vector3(0, 0, 0);
-            gameObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
     }
 
     private void Update()
     {
-        outline.SetActive(charged);
-        if (left.GetComponent<CablePuzzle>().charged)
+        if (charged)
         {
-            charged = (transform.localPosition == left.transform.localPosition);
+            gameObject.GetComponent<SpriteRenderer>().sprite = on;
         }
         else
         {
-            charged = false;
+            gameObject.GetComponent<SpriteRenderer>().sprite = off;
+        }
+        if (before != null)
+        {
+            if (before.GetComponent<CablePuzzle>().charged)
+            {
+                charged = (gameObject.GetComponent<SpriteRenderer>().flipX == before.GetComponent<SpriteRenderer>().flipX);
+                if (font)
+                {
+                    charged = true;
+                }
+            }
+            else
+            {
+                charged = false;
+            }
+            if (before.GetComponent<CablePuzzle>().font == true)
+            {
+                charged = true;
+            }
         }
     }
 }
