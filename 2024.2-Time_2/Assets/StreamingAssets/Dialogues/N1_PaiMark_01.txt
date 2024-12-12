@@ -1,0 +1,9 @@
+Mark:
+Pai!!!
+<end>
+Pai:
+Mark, venha aqui! Precisamos que você resolva essa trava de segurança!
+<end>
+Mark:
+Estou indo!
+<end>

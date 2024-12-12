@@ -1,0 +1,21 @@
+Otto:
+Mark! Mark! Precisamos de você! Alerta no reator! Alerta no reator!
+<end>
+Mark:
+Otto, o que está acontecendo?!
+<end>
+Otto:
+Bom dia, Mark. Precisamos que você conserte a trava de segurança do reator. Sem ela, não conseguimos operar o motor direito, e a nave corre o risco de explodir. Você é o único que pode resolver isso!
+<end>
+Mark:
+Ué, cadê aquele desespero todo? Estou indo resolver, pode ficar tranquilo.
+<end>
+Otto:
+Desculpe, precisei me acalmar para explicar melhor a situação.
+<end>
+Otto:
+Mas, Mark, vá para o reator agora! É urgente!
+<end>
+Mark:
+Tá bom, estou indo!
+<end>

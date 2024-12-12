@@ -142,7 +142,7 @@ public class DialogController : MonoBehaviour
             image.gameObject.SetActive(false);
         }
         onDialog = false;
-        onDialogEnd?.Invoke();
         onDialogFinish?.Invoke();
+        onDialogEnd?.Invoke();
     }
 }
