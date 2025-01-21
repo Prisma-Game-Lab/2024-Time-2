@@ -21,7 +21,7 @@ public class FadeScript : MonoBehaviour
         LevelManager.onSceneTransition -= StartFadeOut;
     }
 
-    private void StartFadeOut() 
+    public void StartFadeOut() 
     {
         an.SetTrigger("ChangeScene");
     }
