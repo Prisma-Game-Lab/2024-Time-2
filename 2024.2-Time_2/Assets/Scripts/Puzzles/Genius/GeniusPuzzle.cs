@@ -7,21 +7,24 @@ using UnityEngine.UI;
 public class GeniusPuzzle : MonoBehaviour
 {
     [Header("Configuration")]
-    [SerializeField] private bool noite = false; //comecei como true por motivos de teste, mudar depois
+    [SerializeField] private bool noite = false;
 
     [Header("Stats")]
     [SerializeField] private float turnSpeed;
-    [SerializeField] private float turnAcceleration;
-    [SerializeField] private int buttonsAmount;
+    [SerializeField] private float turnAccelerationPerGlow;
+    [SerializeField] private float turnAccelerationPerButton;
+    [SerializeField] private int[] buttonsAmount;
     [SerializeField] private GeniusButtons[] buttonsControllers;
     [SerializeField] private UnityEvent onPuzzleCompleted;
 
+    private float currentTurnSpeed;
     private List<int> solucao = new List<int>();
     private int nCorrectResponses = 0;
     private bool canAnswer = false;
     private bool onFailingSequence = false;
     private Color original;
     private int randomNum;
+    private int roundNumber = 0;
 
     private void Awake()
     {
@@ -49,6 +52,7 @@ public class GeniusPuzzle : MonoBehaviour
         nCorrectResponses = 0;
         solucao.Clear();
         canAnswer = false;
+        currentTurnSpeed = turnSpeed;
 
         foreach (GeniusButtons geniusButtons in buttonsControllers) 
         {
@@ -57,13 +61,14 @@ public class GeniusPuzzle : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
-        for (int i = 0; i < buttonsAmount; i++)
+        for (int i = 0; i < buttonsAmount[roundNumber]; i++)
         {
             randomNum = Random.Range(0, buttonsControllers.Length);
             solucao.Add(randomNum);
             buttonsControllers[randomNum].StartGlow();
             yield return new WaitForSeconds(1);
             buttonsControllers[randomNum].RevertToOriginalColor();
+            currentTurnSpeed += turnAccelerationPerGlow;
             yield return new WaitForSeconds(0.5f);
         }
 
@@ -83,10 +88,19 @@ public class GeniusPuzzle : MonoBehaviour
         if(colorID == solucao[nCorrectResponses]) 
         {
             nCorrectResponses++;
-            if (nCorrectResponses == buttonsAmount)
+            currentTurnSpeed += turnAccelerationPerButton;
+            if (nCorrectResponses == buttonsAmount[roundNumber])
             {
-                onPuzzleCompleted?.Invoke();
-                //ganhou
+                roundNumber++;
+                if (buttonsAmount.Length == roundNumber) 
+                {
+                    onPuzzleCompleted?.Invoke();
+                    //ganhou
+                }
+                else 
+                {
+                    StartCoroutine(Glow());
+                }
             }
         }
         else 
@@ -124,7 +138,7 @@ public class GeniusPuzzle : MonoBehaviour
     {
         if(noite == true)
         {
-            transform.RotateAround(transform.position, Vector3.forward, turnSpeed + turnAcceleration * nCorrectResponses);
+            transform.RotateAround(transform.position, Vector3.forward, currentTurnSpeed);
         }
     }
 }
