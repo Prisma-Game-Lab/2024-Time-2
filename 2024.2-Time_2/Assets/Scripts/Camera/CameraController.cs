@@ -93,7 +93,7 @@ public class CameraController : MonoBehaviour
         cameraArrows.TurnOffArrows();
     }
 
-    private void DisableCameraMovement()
+    public void DisableCameraMovement()
     {
         canMove = false;
         cameraArrows.TurnOffArrows();

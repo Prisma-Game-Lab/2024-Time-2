@@ -4,9 +4,3 @@ Consegui remover a trava de segurança!
 Pai:
 Boa, garoto! Esse é o meu filho! Agora podemos trabalhar no motor com segurança.
 <end>
-Pai:
-Ufa... Graças a você, conseguimos consertar o motor sem riscos. Se não fosse por isso, ele teria explodido.
-<end>
-Pai:
-Parabéns, Mark! Você salvou a nave!
-<end>

@@ -1,0 +1,6 @@
+Pai:
+Ufa... Graças a você, conseguimos consertar o motor sem riscos. Se não fosse por isso, ele teria explodido.
+<end>
+Otto:
+Parabéns, Mark! Você salvou a nave!
+<end>
