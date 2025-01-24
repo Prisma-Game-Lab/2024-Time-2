@@ -191,6 +191,18 @@ PrefabInstance:
       propertyPath: linked
       value: 
       objectReference: {fileID: 1047225236}
+    - target: {fileID: 5458706583464201074, guid: 160b2b975938d8442a077fae41e07e72, type: 3}
+      propertyPath: linked.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5458706583464201074, guid: 160b2b975938d8442a077fae41e07e72, type: 3}
+      propertyPath: linked.Array.data[0]
+      value: 
+      objectReference: {fileID: 793619867}
+    - target: {fileID: 5458706583464201074, guid: 160b2b975938d8442a077fae41e07e72, type: 3}
+      propertyPath: linked.Array.data[1]
+      value: 
+      objectReference: {fileID: 2111628386}
     - target: {fileID: 5649794566328270127, guid: 160b2b975938d8442a077fae41e07e72, type: 3}
       propertyPath: m_Name
       value: WireInverted (1)

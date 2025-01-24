@@ -13,15 +13,18 @@ public class CablePuzzle : MonoBehaviour
     [SerializeField] private Sprite off;
     [SerializeField] private GameObject before;
     [SerializeField] private GameObject crossed;
-    [SerializeField] private GameObject linked;
+    [SerializeField] private GameObject[] linked;
 
 
     private void OnMouseDown()
     {
         Spin(gameObject);
-        if (noite && linked != null)
+        if (noite)
         {
-            Spin(linked);
+            for (int i = 0; i < linked.Length; i++)
+            {
+                Spin(linked[i]);
+            }
         }
     }
 
