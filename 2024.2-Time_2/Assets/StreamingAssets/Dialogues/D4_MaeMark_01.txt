@@ -1,0 +1,30 @@
+Sra Ingenium:
+Olá meu filho...
+<end>
+Mark:
+Oi mãe, como a senhora está?
+<end>
+Sra Ingenium:
+...
+<end>
+Sra Ingenium:
+Preocupada com você, meu filho.
+<end>
+Sra Ingenium:
+Preocupada com você, meu filho. Você não para nem por 1 segundo, mal dorme e não tira nenhum tempo para si...
+<end>
+Mark:
+Eu vou ter muito tempo quando chegarmos no nosso novo lar, mãe!
+<end>
+Sra Ingenium:
+Filho...
+<end>
+Mark:
+Eu dou conta mãe, prometo!
+<end>
+Sra Ingenium:
+Ok filho, só... toma cuidado.
+<end>
+Mark:
+Ok!..
+<end>

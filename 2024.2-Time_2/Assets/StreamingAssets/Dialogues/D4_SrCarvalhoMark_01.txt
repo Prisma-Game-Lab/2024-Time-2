@@ -1,0 +1,30 @@
+Mark:
+Muito bom dia, senhor Carvalho!
+<end>
+Sr Carvalho:
+Olá mark!
+<end>
+Sr Carvalho:
+Aceita um cigarro? Esses são os últimos que temos!
+<end>
+Mark:
+Não, obrigado...
+<end>
+Mark:
+Isso não vai me fazer bem.
+<end>
+Sr Carvalho:
+Haha!
+<end>
+Sr Carvalho:
+Desde quando você se importa com a tua saúde?
+<end>
+Mark:
+...
+<end>
+Sr Carvalho:
+Sobra mais pra mim!
+<end>
+Sr Carvalho:
+Vai lá falar com a Eliza, ela ta te esperando!
+<end>

@@ -1,0 +1,21 @@
+Eliza:
+Os sistemas de navegação estão online! Muito bem, Mark.
+<end>
+Eliza:
+Vou colocar a gente no curso novamente.
+<end>
+Mark:
+Mas você disse que tinha-
+<end>
+Eliza:
+Eu sou humana, Mark. Minhas rotas se baseiam em mapas e no que vejo. O computador sempre vai me superar em navegação.
+<end>
+Mark:
+Humm, bom ponto.
+<end>
+Eliza:
+Agora vai para engenharia e da uma olhada no log.
+<end>
+Eliza:
+Duvido que só tenha uma sistema dando problema nessa lata velha.
+<end>

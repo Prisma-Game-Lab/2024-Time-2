@@ -58,6 +58,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c90234848fe5e428ba0e6533dc8db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrowSize: 50
+  arrowOffset: 75
 --- !u!114 &1041162026592364159
 MonoBehaviour:
   m_ObjectHideFlags: 0

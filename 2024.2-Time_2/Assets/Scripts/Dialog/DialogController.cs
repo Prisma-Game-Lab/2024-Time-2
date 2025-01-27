@@ -32,14 +32,13 @@ public class DialogController : MonoBehaviour
     string[] fileLines;
     string currentName;
 
-    private bool onDialog;
     private bool writingLine;
 
     public void StartDialog(string txtFileName, ref UnityEvent onDialogEndEvent, ref Image[] chrImages, ref string[] chrNames)
     {
         string txtPath;
 
-        if (onDialog)
+        if (GameManager.Instance.onDialog)
         {
             return;
         }
@@ -66,7 +65,7 @@ public class DialogController : MonoBehaviour
         }
 
         AdvanceDialog();
-        onDialog = true;
+        GameManager.Instance.onDialog = true;
     }
 
     public void AdvanceDialog()
@@ -141,7 +140,7 @@ public class DialogController : MonoBehaviour
         {
             image.gameObject.SetActive(false);
         }
-        onDialog = false;
+        GameManager.Instance.onDialog = false;
         onDialogFinish?.Invoke();
         onDialogEnd?.Invoke();
     }

@@ -101,6 +101,10 @@ public class CameraController : MonoBehaviour
 
     private void EnableCameraMovement() 
     {
+        if (GameManager.Instance.onDialog)
+        {
+            return;
+        }
         canMove = true;
         if (!shouldMove)
         {
