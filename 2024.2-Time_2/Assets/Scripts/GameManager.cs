@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance {  get; private set; }
 
+    public static int maxPrism = 1;
+    public static int currPrism = 0;
+
     private int objectiveCount = 0;
 
     public bool onDialog = false;

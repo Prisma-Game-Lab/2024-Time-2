@@ -8,18 +8,23 @@ public class CablePuzzle : MonoBehaviour
     [SerializeField] private bool noite = true;
     [SerializeField] private bool charged = false;
     [SerializeField] private bool font = false;
+    [SerializeField] public bool prism = false;
     [SerializeField] private Sprite on;
     [SerializeField] private Sprite off;
     [SerializeField] private GameObject before;
-    [SerializeField] private GameObject linked;
+    [SerializeField] private GameObject crossed;
+    [SerializeField] private GameObject[] linked;
 
 
     private void OnMouseDown()
     {
         Spin(gameObject);
-        if (noite && linked != null)
+        if (noite)
         {
-            Spin(linked);
+            for (int i = 0; i < linked.Length; i++)
+            {
+                Spin(linked[i]);
+            }
         }
     }
 
@@ -45,23 +50,48 @@ public class CablePuzzle : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = off;
         }
-        if (before != null)
+        if (!prism)
         {
-            if (before.GetComponent<CablePuzzle>().charged)
+            if (before != null)
             {
-                charged = (gameObject.GetComponent<SpriteRenderer>().flipX == before.GetComponent<SpriteRenderer>().flipX);
-                if (font)
+                if (before.GetComponent<CablePuzzle>().charged)
+                {
+                    charged = (gameObject.GetComponent<SpriteRenderer>().flipX == before.GetComponent<SpriteRenderer>().flipX);
+                    if (font)
+                    {
+                        charged = true;
+                    }
+                }
+                else
+                {
+                    charged = false;
+                }
+                if (before.GetComponent<CablePuzzle>().font == true)
                 {
                     charged = true;
                 }
             }
-            else
+        }
+        else
+        {
+            if (crossed != null)
             {
-                charged = false;
-            }
-            if (before.GetComponent<CablePuzzle>().font == true)
-            {
-                charged = true;
+                if (crossed.GetComponent<CablePuzzle>().charged)
+                {
+                    charged = (gameObject.GetComponent<SpriteRenderer>().flipX == crossed.GetComponent<SpriteRenderer>().flipX);
+                    if (font)
+                    {
+                        charged = true;
+                    }
+                }
+                else
+                {
+                    charged = false;
+                }
+                if (crossed.GetComponent<CablePuzzle>().font == true)
+                {
+                    charged = true;
+                }
             }
         }
     }
