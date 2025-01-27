@@ -1,0 +1,18 @@
+Eliza:
+Mark! O sistema de navegação está offline!
+<end>
+Mark:
+A nossa rota!!!
+<end>
+Eliza:
+Relaxa! Eu estou mantendo a gente no curso na base do olhometro, mas preciso que conserte os sistemas de navegação!
+<end>
+Eliza:
+Pra ontem!!!
+<end>
+Mark:
+Pode deixar!! Vou resolver isso agora mesmo...
+<end>
+Mark:
+Temos que chegar lá...
+<end>
