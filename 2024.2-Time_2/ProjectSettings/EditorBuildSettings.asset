@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cenas Oficiais/Dia 4/QuartoMarkD4.unity
     guid: 88bc964e4ef2a584cb39e07ef92ebc26
+  - enabled: 1
+    path: Assets/Scenes/Cenas Oficiais/Dia 4/ReatorD4.unity
+    guid: 505501eda3084b640850a7ae7c0bcab9
   m_configObjects: {}

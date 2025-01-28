@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 310381614}
   - component: {fileID: 310381611}
   - component: {fileID: 310381615}
+  - component: {fileID: 310381616}
   m_Layer: 0
   m_Name: Toriel_battle
   m_TagString: Untagged
@@ -435,6 +436,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.72, y: 0.984}
   m_EdgeRadius: 0
+--- !u!114 &310381616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310381610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 336f019fe89fa4c40a8fb8d44c50224e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveNumber: 401
+  onCorrectObjective:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 310381610}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &498930638 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 717742645338652306, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
