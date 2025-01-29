@@ -1,0 +1,57 @@
+Mark:
+ELIZA!!
+<end>
+Eliza:
+Uau! Eu não vejo você animado assim faz alguns anos!
+<end>
+Mark:
+Eu descobri um jeito de aumentar a capacidade do reator, triplicando a sua capacidade e com isso teríamos velocidade suficiente para chegar no nosso destino em ⅓ do tempo!!
+<end>
+Eliza:
+Assim daria pra chegar no planeta que queríamos inicialmente, na verdade!
+<end>
+Mark:
+Como assim??? Eliza, a gente não tá no curso original?
+<end>
+Eliza:
+A alguns anos já. Olha ao redor Mark essa tranqueira nunca ia aguentar chegar no nosso destino, então eu tracei uma rota para um planeta próximo.
+<end>
+Eliza:
+As condições são bem mais inóspitas do que a colônia original, mas é possível estabelecer uma colônia ali. Extremamente difícil, porém assim teríamos uma chance!
+<end>
+Mark:
+Por que você não me contou??? Eu teria dado um jeito, feito algo!
+<end>
+Eliza:
+Você não tá bem, Mark. Queria te poupar….
+<end>
+Eliza:
+Mas de qualquer jeito, você achou uma solução!
+<end>
+Mark:
+SIM!! posso fazer os ajustes!?
+<end>
+Eliza:
+Mark, você me garante que a nave aguenta isso?
+<end>
+Mark:
+…. Sim, ela aguenta!
+<end>
+Mark:
+Mas nessa velocidade você teria que trabalhar junto do sistema de navegação para garantir que a nave não saia do curso!
+<end>
+Eliza:
+Isso eu consigo!
+<end>
+Eliza:
+…….
+<end>
+Eliza:
+…
+<end>
+Eliza:
+Mark, ajusta o reator.
+<end>
+Mark:
+Sim senhora!
+<end>

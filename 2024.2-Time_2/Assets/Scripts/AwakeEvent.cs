@@ -9,6 +9,12 @@ public class AwakeEvent : MonoBehaviour
 
     void Start()
     {
-        onStart.Invoke();
+        StartCoroutine(FrameDelay());
     }
+
+    IEnumerator FrameDelay() 
+    {
+        yield return new WaitForSeconds(0.1f);
+        onStart.Invoke();
+    } 
 }
