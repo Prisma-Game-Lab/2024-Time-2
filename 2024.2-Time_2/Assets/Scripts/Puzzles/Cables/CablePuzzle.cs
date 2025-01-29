@@ -19,12 +19,9 @@ public class CablePuzzle : MonoBehaviour
     private void OnMouseDown()
     {
         Spin(gameObject);
-        if (noite)
+        for (int i = 0; i < linked.Length; i++)
         {
-            for (int i = 0; i < linked.Length; i++)
-            {
-                Spin(linked[i]);
-            }
+            Spin(linked[i]);
         }
     }
 
@@ -72,7 +69,7 @@ public class CablePuzzle : MonoBehaviour
                 }
             }
         }
-        else
+        else if (noite)
         {
             if (crossed != null)
             {
