@@ -23,6 +23,8 @@ public class FadeScript : MonoBehaviour
 
     public void StartFadeOut() 
     {
+        GameManager.Instance.onDialog = true;
         an.SetTrigger("ChangeScene");
+        StartCoroutine(GameManager.Instance.WaitForTransition());
     }
 }

@@ -52,6 +52,10 @@ public class PlayerController : MonoBehaviour
 
     public void StartTriggerInteraction(GameObject interactedObject) 
     {
+        if (GameManager.Instance.onDialog) 
+        {
+            return;
+        }
         if (interactedObject != null)
         {
             onInteractionStart?.Invoke(interactedObject);
@@ -60,6 +64,10 @@ public class PlayerController : MonoBehaviour
 
     public void CancelTriggerInteraction(GameObject interactedObject)
     {
+        if (GameManager.Instance.onDialog)
+        {
+            return;
+        }
         if (interactedObject != null)
         {
             onInteractionEnd?.Invoke(interactedObject);

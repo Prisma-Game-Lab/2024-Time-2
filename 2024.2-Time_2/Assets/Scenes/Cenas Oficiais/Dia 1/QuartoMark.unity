@@ -275,6 +275,11 @@ Transform:
   - {fileID: 2037787626}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &509869747 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3160105537723268544, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
+  m_PrefabInstance: {fileID: 1932999706}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1257278493
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,10 +359,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3160105537723268544, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933500435264013259, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998465033697940227, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408500172310770111, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6220880970306454728, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8068456350960027653, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: m_Name
       value: CanvasObject
       objectReference: {fileID: 0}
+    - target: {fileID: 8165117087871661022, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 509869747}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -664,7 +693,7 @@ Transform:
   m_GameObject: {fileID: 2127124712}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.2, y: 0, z: 0}
+  m_LocalPosition: {x: -4.05, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

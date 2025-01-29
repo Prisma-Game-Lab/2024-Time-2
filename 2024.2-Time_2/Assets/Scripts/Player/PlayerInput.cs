@@ -11,6 +11,10 @@ public class PlayerInput : MonoBehaviour
     private GameObject clickedObject;
 
     private Vector2 mousePosition;
+    private Vector2 mouseScreenPosition;
+
+    [SerializeField] private float arrowSize;
+    [SerializeField] private float arrowOffset;
 
     private void Awake()
     {
@@ -26,6 +30,10 @@ public class PlayerInput : MonoBehaviour
     {
         if (context.performed)
         {
+            if (CheckForCameraArrows()) 
+            {
+                return;
+            }
             Collider2D col = Physics2D.OverlapPoint(mousePosition);
             if (col != null)
             {
@@ -49,11 +57,23 @@ public class PlayerInput : MonoBehaviour
 
     public void ReadMousePosition(InputAction.CallbackContext context) 
     {
-        Vector2 screenMousePosition = context.ReadValue<Vector2>();
+        mouseScreenPosition = context.ReadValue<Vector2>();
         if(mainCamera != null) 
         {
-            mousePosition = mainCamera.ScreenToWorldPoint(screenMousePosition);
+            mousePosition = mainCamera.ScreenToWorldPoint(mouseScreenPosition);
         }
         GameManager.Instance.mousePos = mousePosition;
+    }
+
+    private bool CheckForCameraArrows() 
+    {
+        if (Screen.height / 2 - arrowSize <= mouseScreenPosition.y && mouseScreenPosition.y <= Screen.height / 2 + arrowSize) 
+        {
+            if (mouseScreenPosition.x + arrowOffset <= arrowSize * 2 || Screen.width - arrowSize * 2 - arrowOffset <= mouseScreenPosition.x)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -1,0 +1,6 @@
+Display de tarefas:
+-Falha crítica nos sistemas de navegação da nave
+-Reator capacidade reduzida
+-Sistemas de irrigação do pátio
+-Dormitórios blackouts de energia constantes
+<end>

@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     private int objectiveCount = 0;
 
+    public bool onDialog = false;
+
     public Vector2 mousePos;
     public Vector2 screenMousePosition;
     public int DragableObjectOrder = 0;
@@ -39,5 +41,16 @@ public class GameManager : MonoBehaviour
         {
             objectiveCount = objectiveNumber;
         }
+    }
+
+    public void AddObjective()
+    {
+        objectiveCount++;
+    }
+
+    public IEnumerator WaitForTransition() 
+    {
+        yield return new WaitForSeconds(1f);
+        onDialog = false;
     }
 }

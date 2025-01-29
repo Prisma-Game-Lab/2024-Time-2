@@ -7,7 +7,7 @@ public class Menu : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene(1); //considerando que cena 1 vai ser a primeira cena
+        SceneManager.LoadScene(0); 
     }
 
     public void QuitGame()
