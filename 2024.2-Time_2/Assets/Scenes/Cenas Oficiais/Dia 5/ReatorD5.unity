@@ -583,7 +583,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: onPuzzleCompleted.m_PersistentCalls.m_Calls.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: onPuzzleCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -599,7 +599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: onPuzzleCompleted.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: onPuzzleCompleted.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
@@ -620,11 +620,11 @@ PrefabInstance:
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: onPuzzleCompleted.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 2545507142177450802}
+      objectReference: {fileID: 1185458411846493393}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: onPuzzleCompleted.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 1185458411846493393}
+      objectReference: {fileID: 681225215}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: onPuzzleCompleted.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
@@ -651,11 +651,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: onPuzzleCompleted.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: DestroyPuzzleStorage
+      value: OnDoorInteraction
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: onPuzzleCompleted.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: OnDoorInteraction
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: onPuzzleCompleted.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
@@ -675,11 +675,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: onPuzzleCompleted.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: PuzzleStorage, Assembly-CSharp
+      value: DoorScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: onPuzzleCompleted.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: DoorScript, Assembly-CSharp
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: onPuzzleCompleted.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
@@ -1346,74 +1346,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374bcbf032ce1a046a920654b96ef3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &2545507142177450801
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 761032485681439744, guid: 19c25900528f9014d9ab58fb6ca2180c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 761032485681439744, guid: 19c25900528f9014d9ab58fb6ca2180c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 761032485681439744, guid: 19c25900528f9014d9ab58fb6ca2180c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 761032485681439744, guid: 19c25900528f9014d9ab58fb6ca2180c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 761032485681439744, guid: 19c25900528f9014d9ab58fb6ca2180c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 761032485681439744, guid: 19c25900528f9014d9ab58fb6ca2180c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 761032485681439744, guid: 19c25900528f9014d9ab58fb6ca2180c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 761032485681439744, guid: 19c25900528f9014d9ab58fb6ca2180c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 761032485681439744, guid: 19c25900528f9014d9ab58fb6ca2180c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 761032485681439744, guid: 19c25900528f9014d9ab58fb6ca2180c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7896902479605801341, guid: 19c25900528f9014d9ab58fb6ca2180c, type: 3}
-      propertyPath: m_Name
-      value: PuzzleStorage
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 19c25900528f9014d9ab58fb6ca2180c, type: 3}
---- !u!114 &2545507142177450802 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3289067349178778707, guid: 19c25900528f9014d9ab58fb6ca2180c, type: 3}
-  m_PrefabInstance: {fileID: 2545507142177450801}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b0bbdd1e38d6fe408d58b5a1689d9a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1423,4 +1355,3 @@ SceneRoots:
   - {fileID: 331184562}
   - {fileID: 1932999706}
   - {fileID: 240288575}
-  - {fileID: 2545507142177450801}

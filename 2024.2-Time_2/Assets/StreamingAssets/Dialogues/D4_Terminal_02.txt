@@ -1,5 +1,4 @@
 Display de tarefas:
--Reator capacidade reduzida
 -Sistemas de irrigação do pátio
 -Dormitórios blackouts de energia constantes
 <end>

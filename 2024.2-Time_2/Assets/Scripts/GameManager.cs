@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static int maxPrism = 1;
     public static int currPrism = 0;
 
-    private int objectiveCount = 0;
+    [SerializeField] private int objectiveCount = 0;
 
     public bool onDialog = false;
 

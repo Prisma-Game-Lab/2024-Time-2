@@ -30,6 +30,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Cenas Oficiais/Dia 4/Corredor1D4.unity
     guid: 90b71d6a349ceec45adacb478796908a
   - enabled: 1
+    path: Assets/Scenes/Cenas Oficiais/Dia 4/Corredor2D4.unity
+    guid: 78980ee791b4c144c8347d5bb76598ba
+  - enabled: 1
+    path: Assets/Scenes/Cenas Oficiais/Dia 4/CozinhaD4.unity
+    guid: c57c0863361ef004dbbc38888cf04711
+  - enabled: 1
     path: Assets/Scenes/Cenas Oficiais/Dia 4/PatioD4.unity
     guid: 3fd4c236919ebb646b76c4b319617c17
   - enabled: 1
