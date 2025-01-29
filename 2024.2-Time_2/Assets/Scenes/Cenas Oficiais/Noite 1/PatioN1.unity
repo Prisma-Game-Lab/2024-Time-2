@@ -430,7 +430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: turnSpeed
-      value: 1
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: buttonsAmount
@@ -442,7 +442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: turnAccelerationPerGlow
-      value: 0.5
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: buttonsAmount.Array.size
@@ -450,7 +450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: turnAccelerationPerButton
-      value: 0.5
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: buttonsAmount.Array.data[0]
