@@ -292,7 +292,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5ab905090fcde38468d5f4a39f2b9999, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.087511554, g: 0.74034715, b: 0.90943396, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -943,7 +943,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5ab905090fcde38468d5f4a39f2b9999, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.90943396, g: 0.8062233, b: 0.04632958, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -1246,6 +1246,18 @@ PrefabInstance:
     - target: {fileID: 4082387532724716394, guid: 5c3a4ae966259794184e6e5ca8fd5d8c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091252245593717016, guid: 5c3a4ae966259794184e6e5ca8fd5d8c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9098039
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091252245593717016, guid: 5c3a4ae966259794184e6e5ca8fd5d8c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091252245593717016, guid: 5c3a4ae966259794184e6e5ca8fd5d8c, type: 3}
+      propertyPath: m_Color.r
+      value: 0.09019608
       objectReference: {fileID: 0}
     - target: {fileID: 8117897879696637479, guid: 5c3a4ae966259794184e6e5ca8fd5d8c, type: 3}
       propertyPath: m_Name
@@ -1685,6 +1697,18 @@ PrefabInstance:
     - target: {fileID: 5649794566328270127, guid: 160b2b975938d8442a077fae41e07e72, type: 3}
       propertyPath: m_Name
       value: Wire 10 (inv)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761542164310728596, guid: 160b2b975938d8442a077fae41e07e72, type: 3}
+      propertyPath: m_Color.b
+      value: 0.047058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761542164310728596, guid: 160b2b975938d8442a077fae41e07e72, type: 3}
+      propertyPath: m_Color.g
+      value: 0.80784315
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761542164310728596, guid: 160b2b975938d8442a077fae41e07e72, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9098039
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
