@@ -6,15 +6,20 @@ using UnityEngine.Events;
 public class CablesManager : MonoBehaviour
 {
     [SerializeField] private UnityEvent onPuzzleCompleted;
-    public static int fonts;
     [SerializeField] private int maxFonts;
+    private int fonts;
 
-    private void Update()
+    public void AddFont() 
     {
+        fonts += 1;
         if (fonts == maxFonts)
         {
-            fonts = 0;
             onPuzzleCompleted?.Invoke();
         }
+    }
+
+    public void SubtractFont()
+    {
+        fonts -= 1;
     }
 }

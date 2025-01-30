@@ -99,7 +99,7 @@ public class CameraController : MonoBehaviour
         cameraArrows.TurnOffArrows();
     }
 
-    private void EnableCameraMovement() 
+    public void EnableCameraMovement() 
     {
         if (GameManager.Instance.onDialog)
         {

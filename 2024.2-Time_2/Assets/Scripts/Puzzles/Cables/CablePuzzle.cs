@@ -8,6 +8,8 @@ public class CablePuzzle : MonoBehaviour
     [SerializeField] private bool noite = true;
     [SerializeField] private bool charged = false;
     [SerializeField] private bool font = false;
+    private float gambiarra;
+    private bool gambiarra2;
     [SerializeField] public bool prism = false;
     [SerializeField] private Sprite on;
     [SerializeField] private Sprite off;
@@ -15,6 +17,12 @@ public class CablePuzzle : MonoBehaviour
     [SerializeField] private GameObject crossed;
     [SerializeField] private GameObject[] linked;
 
+    private CablesManager cm;
+
+    private void Awake()
+    {
+        cm = transform.parent.parent.GetComponent<CablesManager>();
+    }
 
     private void OnMouseDown()
     {
@@ -25,15 +33,15 @@ public class CablePuzzle : MonoBehaviour
         }
     }
 
-    private void Spin(GameObject gameObject)
+    public void Spin(GameObject objeto)
     {
-        if (gameObject.GetComponent<SpriteRenderer>().flipX)
+        if (objeto.GetComponent<SpriteRenderer>().flipX)
         {
-            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            objeto.GetComponent<SpriteRenderer>().flipX = false;
         }
         else
         {
-            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            objeto.GetComponent<SpriteRenderer>().flipX = true;
         }
     }
 
@@ -57,12 +65,26 @@ public class CablePuzzle : MonoBehaviour
                     if (font)
                     {
                         charged = true;
-                        CablesManager.fonts += 1;
+                        if (gambiarra < 1) 
+                        {
+                            gambiarra += Time.deltaTime;
+                        }
+                        else if (!gambiarra2)
+                        {
+                            cm.AddFont();
+                            gambiarra2 = true;
+                        }
                     }
                 }
                 else
                 {
                     charged = false;
+                    if (font && gambiarra2)
+                    {
+                        cm.SubtractFont();
+                        gambiarra2 = false;
+                        gambiarra = 0;
+                    }
                 }
                 if (before.GetComponent<CablePuzzle>().font == true)
                 {
@@ -80,12 +102,26 @@ public class CablePuzzle : MonoBehaviour
                     if (font)
                     {
                         charged = true;
-                        CablesManager.fonts += 1;
+                        if (gambiarra < 1)
+                        {
+                            gambiarra += Time.deltaTime;
+                        }
+                        else if (gambiarra2)
+                        {
+                            cm.AddFont();
+                            gambiarra2 = true;
+                        }
                     }
                 }
                 else
                 {
                     charged = false;
+                    if (font && gambiarra2)
+                    {
+                        cm.SubtractFont();
+                        gambiarra2 = false;
+                        gambiarra = 0;
+                    }
                 }
                 if (crossed.GetComponent<CablePuzzle>().font == true)
                 {

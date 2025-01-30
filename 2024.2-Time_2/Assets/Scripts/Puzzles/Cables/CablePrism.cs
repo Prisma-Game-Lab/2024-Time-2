@@ -10,23 +10,33 @@ public class CablePrism : MonoBehaviour
     [SerializeField] private GameObject upR;
     [SerializeField] private GameObject downR;
 
+    private void Start()
+    {
+        AlgumaCoisaLa();
+    }
+
     private void OnMouseDown()
-    {      
-            if (state)
-            {
-                gameObject.GetComponent<SpriteRenderer>().sprite = off;
-                GameManager.currPrism -= 1;
-                upR.GetComponent<CablePuzzle>().prism = false;
-                downR.GetComponent<CablePuzzle>().prism = false;
-                state = false;
-            }
-            else
+    {
+        AlgumaCoisaLa();
+    }
+
+    private void AlgumaCoisaLa() 
+    {
+        if (state)
         {
-                gameObject.GetComponent<SpriteRenderer>().sprite = on;
-                GameManager.currPrism += 1;
-                upR.GetComponent<CablePuzzle>().prism = true;
-                downR.GetComponent<CablePuzzle>().prism = true;
-                state = true;
-            }
+            gameObject.GetComponent<SpriteRenderer>().sprite = off;
+            GameManager.currPrism -= 1;
+            upR.GetComponent<CablePuzzle>().prism = false;
+            downR.GetComponent<CablePuzzle>().prism = false;
+            state = false;
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = on;
+            GameManager.currPrism += 1;
+            upR.GetComponent<CablePuzzle>().prism = true;
+            downR.GetComponent<CablePuzzle>().prism = true;
+            state = true;
+        }
     }
 }
