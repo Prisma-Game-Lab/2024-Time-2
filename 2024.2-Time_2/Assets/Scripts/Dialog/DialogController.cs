@@ -70,7 +70,6 @@ public class DialogController : MonoBehaviour
 
     public void AdvanceDialog()
     {
-        AudioManager.Instance.PlaySFX("click");
         if (writingLine)
         {
             OnDialogSkip();
