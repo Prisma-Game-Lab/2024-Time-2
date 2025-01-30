@@ -315,7 +315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7991927002690269597, guid: 3bcbdce430c367b4bac365788b4f7000, type: 3}
       propertyPath: interactionEffect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: ActivateDialog
       objectReference: {fileID: 0}
     - target: {fileID: 9186221292707510926, guid: 3bcbdce430c367b4bac365788b4f7000, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1055,7 +1055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: buttonsAmount.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: turnAccelerationPerButton
@@ -1063,15 +1063,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: buttonsAmount.Array.data[0]
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: buttonsAmount.Array.data[1]
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: buttonsAmount.Array.data[2]
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: onPuzzleCompleted.m_PersistentCalls.m_Calls.Array.size
@@ -1796,10 +1796,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 603110331}
     m_Modifications:
-    - target: {fileID: 5364594691824354531, guid: 9c7f190f892d3df43953a7d3062f2742, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: cea3f3b90d2314d46952b13af144686f, type: 3}
     - target: {fileID: 6604081957511180940, guid: 9c7f190f892d3df43953a7d3062f2742, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1974,7 +1970,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 369760435}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2546,7 +2542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7991927002690269597, guid: 3bcbdce430c367b4bac365788b4f7000, type: 3}
       propertyPath: interactionEffect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: ActivateDialog
       objectReference: {fileID: 0}
     - target: {fileID: 9186221292707510926, guid: 3bcbdce430c367b4bac365788b4f7000, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3396,7 +3392,7 @@ PrefabInstance:
       objectReference: {fileID: 871606116}
     - target: {fileID: 7991927002690269597, guid: 1e3e60bbb38599149a55aac808423097, type: 3}
       propertyPath: interactionEffect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: ActivateDialog
       objectReference: {fileID: 0}
     - target: {fileID: 9186221292707510926, guid: 1e3e60bbb38599149a55aac808423097, type: 3}
       propertyPath: m_LocalPosition.x
