@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UISliders : MonoBehaviour
 {
     public Slider _musicSlider, _sfxSlider;
-    public AudioSource music, sfx;
+    public AudioSource music, sfx; //acho que e inutil no momento mas meio tarde pra tirar e ver no que da
 
     public void MusicVolume()
     {
