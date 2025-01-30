@@ -60,7 +60,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.4658, y: 0.2786, z: 0}
-  m_LocalScale: {x: 0.15486191, y: 0.12562536, z: 1}
+  m_LocalScale: {x: 0.6582096, y: 0.5481788, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4772182938603855629}
@@ -80,10 +80,13 @@ MonoBehaviour:
   noite: 1
   charged: 1
   font: 1
-  on: {fileID: 21300000, guid: 897ab919766465c41ae15b5a39365d3f, type: 3}
-  off: {fileID: 21300000, guid: 57a209ab160e2a943ab40a4c0f9c7809, type: 3}
+  prism: 0
+  on: {fileID: 21300000, guid: a716a491cb5278e459a7713fece6e879, type: 3}
+  off: {fileID: 21300000, guid: 1fc0238dd98c38340a7fce931d9c74d5, type: 3}
   before: {fileID: 0}
-  linked: {fileID: 0}
+  crossed: {fileID: 0}
+  linked:
+  - {fileID: 0}
 --- !u!212 &2621014977395441112
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -125,7 +128,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 897ab919766465c41ae15b5a39365d3f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a716a491cb5278e459a7713fece6e879, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
