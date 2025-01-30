@@ -656,6 +656,14 @@ PrefabInstance:
       propertyPath: turnAcceleration
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8690546165025914405, guid: 07d438e3c5982ab4f91c20122ef2425e, type: 3}
+      propertyPath: onPuzzleCompleted.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8690546165025914405, guid: 07d438e3c5982ab4f91c20122ef2425e, type: 3}
+      propertyPath: onPuzzleCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8859551347506564928, guid: 07d438e3c5982ab4f91c20122ef2425e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

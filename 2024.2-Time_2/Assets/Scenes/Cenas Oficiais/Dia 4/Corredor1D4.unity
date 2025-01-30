@@ -448,6 +448,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336f019fe89fa4c40a8fb8d44c50224e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dontCheckOnStart: 0
+  puzzleMarker: 0
+  idNumber: 0
   objectiveNumber: 401
   onCorrectObjective:
     m_PersistentCalls:
@@ -1316,6 +1319,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1620415903554160741, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620415903554160741, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620415903554160741, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620415903554160741, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2223973587023587571, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
