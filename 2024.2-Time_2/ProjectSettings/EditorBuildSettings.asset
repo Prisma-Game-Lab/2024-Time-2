@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 1cb4d5b488202b143b655c8ba1b0289f
+  - enabled: 1
     path: Assets/Scenes/Cenas Oficiais/Dia 1/QuartoMark.unity
     guid: 26a34e513e6161d458f6cd2739def597
   - enabled: 1
@@ -44,4 +47,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cenas Oficiais/Dia 4/ReatorD4.unity
     guid: 505501eda3084b640850a7ae7c0bcab9
+  - enabled: 1
+    path: Assets/Scenes/Cenas Oficiais/Dia 5/PatioD5.unity
+    guid: 07810070212c0b541ab83e02b3cd510d
+  - enabled: 1
+    path: Assets/Scenes/Cenas Oficiais/Dia 5/ReatorD5.unity
+    guid: 4f9d874c3aa735b4698695327f38aec2
   m_configObjects: {}
