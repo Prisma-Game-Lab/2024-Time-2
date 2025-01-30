@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
+    path: Assets/Scenes/Cenas Oficiais/Menu.unity
     guid: 1cb4d5b488202b143b655c8ba1b0289f
   - enabled: 1
     path: Assets/Scenes/Cenas Oficiais/Dia 1/QuartoMark.unity
