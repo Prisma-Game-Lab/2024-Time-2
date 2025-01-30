@@ -20,7 +20,7 @@ public class CablePrism : MonoBehaviour
                 downR.GetComponent<CablePuzzle>().prism = false;
                 state = false;
             }
-            else if (GameManager.currPrism != GameManager.maxPrism)
+            else
         {
                 gameObject.GetComponent<SpriteRenderer>().sprite = on;
                 GameManager.currPrism += 1;

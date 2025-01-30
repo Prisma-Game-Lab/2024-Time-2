@@ -57,6 +57,7 @@ public class CablePuzzle : MonoBehaviour
                     if (font)
                     {
                         charged = true;
+                        CablesManager.fonts += 1;
                     }
                 }
                 else
@@ -79,6 +80,7 @@ public class CablePuzzle : MonoBehaviour
                     if (font)
                     {
                         charged = true;
+                        CablesManager.fonts += 1;
                     }
                 }
                 else
