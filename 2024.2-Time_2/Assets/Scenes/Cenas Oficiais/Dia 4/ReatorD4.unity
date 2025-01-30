@@ -1198,12 +1198,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4884343627214081241, guid: dc2222ca9996c58489a4301d2b62d4ab, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4974608540995239776, guid: dc2222ca9996c58489a4301d2b62d4ab, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 6ae5e444e36f7924e914b48cfcacb0a0, type: 3}
+      objectReference: {fileID: 21300000, guid: cd0bf5d4971047244b08763a4582b248, type: 3}
     - target: {fileID: 4974608540995239776, guid: dc2222ca9996c58489a4301d2b62d4ab, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -1214,27 +1214,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5648614006480601105, guid: dc2222ca9996c58489a4301d2b62d4ab, type: 3}
       propertyPath: m_Size.x
-      value: 9.716136
+      value: 9.266731
       objectReference: {fileID: 0}
     - target: {fileID: 5648614006480601105, guid: dc2222ca9996c58489a4301d2b62d4ab, type: 3}
       propertyPath: m_Size.y
-      value: 5.240283
+      value: 4.7713366
       objectReference: {fileID: 0}
     - target: {fileID: 5648614006480601105, guid: dc2222ca9996c58489a4301d2b62d4ab, type: 3}
       propertyPath: m_Offset.x
-      value: 0.11778498
+      value: 0.0103189945
       objectReference: {fileID: 0}
     - target: {fileID: 5648614006480601105, guid: dc2222ca9996c58489a4301d2b62d4ab, type: 3}
       propertyPath: m_Offset.y
-      value: 0.11778593
+      value: -0.018989563
       objectReference: {fileID: 0}
     - target: {fileID: 5648614006480601105, guid: dc2222ca9996c58489a4301d2b62d4ab, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 9.1
+      value: 9.12
       objectReference: {fileID: 0}
     - target: {fileID: 5648614006480601105, guid: dc2222ca9996c58489a4301d2b62d4ab, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 4.68
+      value: 4.58
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -2041499577925958, guid: dc2222ca9996c58489a4301d2b62d4ab, type: 3}
