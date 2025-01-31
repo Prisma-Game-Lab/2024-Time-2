@@ -1138,12 +1138,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
-      propertyPath: buttonsAmount.Array.size
+      propertyPath: noite
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
+      propertyPath: turnAccelerationPerGlow
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
+      propertyPath: buttonsAmount.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
+      propertyPath: turnAccelerationPerButton
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: buttonsAmount.Array.data[0]
-      value: 1
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
+      propertyPath: buttonsAmount.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
+      propertyPath: buttonsAmount.Array.data[2]
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6315982065803900318, guid: 193372ced569b164d8bb217ea2e3da0c, type: 3}
       propertyPath: onPuzzleCompleted.m_PersistentCalls.m_Calls.Array.size
